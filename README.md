@@ -17,6 +17,7 @@ I little updated it for usage inside ViewPager, so author(s) hopefully won't pro
 -----------------
 #### Download
 https://github.com/jbruchanov/AndroidPDFViewer/raw/master/apk/PDF2JPG.apk
+
 ![alt tag](http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl=https://github.com/jbruchanov/AndroidPDFViewer/raw/master/apk/PDF2JPG.apk&chld=H|0)
 
 
