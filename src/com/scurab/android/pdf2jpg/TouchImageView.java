@@ -389,6 +389,9 @@ public class TouchImageView extends ImageView {
         fitImageToView();
     }
 
+    private int mFitScaleX;
+    private int mFitScaleY;
+
     /**
      * If the normalizedScale is equal to 1, then the image is made to fit the screen. Otherwise,
      * it is made to fit the screen according to the dimensions of the previous image matrix. This
@@ -413,6 +416,10 @@ public class TouchImageView extends ImageView {
         float scaleY = (float) viewHeight / drawableHeight;
         float scale = Math.min(scaleX, scaleY);
 
+        if (scaleX != 0) {
+            mFitScaleX = (int) (scaleX * 100);
+            mFitScaleY = (int) (scaleY * 100);
+        }
         //
         // Center the image
         //
@@ -930,11 +937,13 @@ public class TouchImageView extends ImageView {
 
     @Override
     public boolean canScrollHorizontally(int direction) {
-        return m[Matrix.MSCALE_X] == 1;
+        int scaleX = (int)(m[Matrix.MSCALE_X] * 100);
+        return mFitScaleX != scaleX;
     }
 
     @Override
     public boolean canScrollVertically(int direction) {
-        return m[Matrix.MSCALE_Y] == 1;
+        int scaleY = (int)(m[Matrix.MSCALE_Y] * 100);
+        return mFitScaleY != scaleY;
     }
 }
