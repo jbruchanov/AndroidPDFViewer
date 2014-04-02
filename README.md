@@ -47,6 +47,8 @@ fm.beginTransaction().add(R.id.fragment_container, f).commit();
 So it's super simple, it works, it doesn't have memory leaks (i did just small memory allocation tests and looks fine).
 It doesn't have messy code coupled inside Activity, it's super simple Fragment...
 
+It doesn't support any features like text selections, link clicking etc because it's converted into image. But this is what i needed basically, **simple** & **functional** PDF Viewer.
+
 -------------------
 #### Little math at the end:
 Using Bitmaps is not much memory friendly. My example is just simple one. ViewPager needs up to 4 pages keep in memory. 
