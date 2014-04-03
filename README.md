@@ -9,7 +9,7 @@ I found out it's not simple task at all.
 
 This project uses [MuPDF](http://mupdf.com) library for PDF stuff.
 
-I took few classes from in com.artifex.mupdf packages from some other project (can't find it now).
+I took few classes in com.artifex.mupdf packages from some other project (can't find it now).
 I also used a very nice android control [TouchImageView](https://github.com/MikeOrtiz/TouchImageView), 
 I little updated it for usage inside ViewPager, so author(s) hopefully won't protest :).
 
@@ -28,7 +28,6 @@ For converting PDF page into JPG just use this
 String file = "/sdcard/example.pdf"; //our PDF file
 MuPDFCore core = new MuPDFCore(file); //initiate core
 Bitmap b = PDFConvertHelper.convert(core, 0); //save 1st page into bitmap
-PDFConvertHelper.convert(core, 0); //save 1st page into bitmap
 PDFConvertHelper.saveBitmap(b,"/sdcard/example_page1.jpg"); //save bitmap into jpeg
 core.onDestroy();//don't forget to release any handlers related to core
 ```
