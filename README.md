@@ -42,6 +42,17 @@ Fragment f = PDFViewFragment.newInstance(file);//just instantiate PDFViewFragmen
 fm.beginTransaction().add(R.id.fragment_container, f).commit();
 ```
 
+-----------------
+#### Obfuscation:
+If you want to use this example in your app with obfuscation you have to keep field MuPDFCore.globals (not sure why is this field accessed from native code). Anyway for ProGuard it's very simple, just add this into your proguard-android.txt
+
+```
+#MuPDFCodre, we have too keep globals variable as is, otherwise crash...
+-keepclassmembers class com.artifex.mupdf.MuPDFCore {
+    private *** globals;
+}
+```
+
 -------------------
 #### Result:
 So it's super simple, it works, it doesn't have memory leaks (i did just small memory allocation tests and looks fine).
