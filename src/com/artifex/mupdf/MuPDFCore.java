@@ -15,7 +15,11 @@ import android.util.Log;
 public class MuPDFCore {
     /* load our native library */
     static {
-        System.loadLibrary("mupdf");
+        try {
+            System.loadLibrary("mupdf");
+        } catch (Throwable e) {
+            throw new RuntimeException("Unable to load libs/{platform}/libmupdf.so", e);
+        }
     }
 
     private static final String TAG = "MuPDFCore";
