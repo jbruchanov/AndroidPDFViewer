@@ -31,7 +31,7 @@ public class MuPDFCore {
     public float mPageHeight;
     private String mFileName;
 
-    private long globals;
+    private long globals; //don't rename it, it's accessed from native code
     private int mCurrentPage;
 
     //region native methods
